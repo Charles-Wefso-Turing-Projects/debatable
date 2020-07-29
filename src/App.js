@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCountdownClock from 'react-countdown-clock';
 import logo from './logo.svg';
 import './App.scss';
 
@@ -10,6 +11,11 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <ReactCountdownClock seconds={60}
+                     color="#000"
+                     alpha={0.9}
+                     size={300}
+       />
         <a
           className="App-link"
           href="https://reactjs.org"
