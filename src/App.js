@@ -1,29 +1,20 @@
 import React from 'react';
-import ReactCountdownClock from 'react-countdown-clock';
-import logo from './logo.svg';
+import ReactCountdownClock from 'react-countdown-clock'
 import './App.scss';
 
 function App() {
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <ReactCountdownClock seconds={60}
+        <h1>Debatable</h1>
+
+        <ReactCountdownClock seconds={10}
                      color="#000"
                      alpha={0.9}
                      size={300}
-       />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+                     onComplete={() => alert("done!")} />
       </header>
     </div>
   );
