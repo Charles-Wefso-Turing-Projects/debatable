@@ -6,6 +6,7 @@ import Debate from '../Debate/Debate'
 import Vote from '../Vote/Vote'
 import useTopics from '../Hooks/useTopics'
 import categories from '../categories'
+import {GrStar} from 'react-icons/gr'
 import {
   Switch, Route, withRouter, Link
 } from 'react-router-dom'
@@ -22,33 +23,13 @@ function App() {
   const topic1 = useTopics(category1)
   const topic2 = useTopics(category2)
 
-  let debators = []
+  const debators = shuffle.pick(players, { 'picks': 2 });
 
-  const debator1 = shuffle.pick(players)
+  const judges = players.filter(player => !debators.includes(player))
 
-  const assignedD1 = players.map(player => {
-    if(player.name === debator1.name){
-      const index = players.indexOf(player)
-      debators.push(debator1)
-    }
-    console.log("debators", debators)
-    console.log("players", players)
-  })
-
-  const debator2 = shuffle.pick(players)
-
-  // const assignedD2 = assignedD1.map(player => {
-  //   if(player.name = debator2.name){
-  //     assignedD1.slice(player)
-  //   }
-  // })
-
-  // const judges = assignedD2  
-
-
-
-//
-
+  console.log("players", players)
+  console.log("debators", debators)
+  console.log("judges", judges)
 
   useEffect(() => {
     if (players) {
@@ -59,7 +40,7 @@ function App() {
 
   const instructions = (
     <main className="App-main">
-      
+      <Nav />
       <section className="instructions">
         <h1>Instructions for Playing</h1>
         <ol>
@@ -89,6 +70,7 @@ function App() {
           const { id } = params
           return(
             <section>
+              <Nav />
               {votes[0].p1 > votes[0].p2 &&
 
                 <section className="wins" >
@@ -116,7 +98,7 @@ function App() {
           const { id } = params
           return(
             <section className="debate">
-              
+              <Nav />
               <h1>Loading...</h1>
             </section>
           )}
@@ -129,8 +111,8 @@ function App() {
           const { id } = params
           return(
             <section className="vote">
-              
-              <Vote {...routeProps} setVotes={setVotes} topic1={topic1} topic2={topic2} debator1={debator1} debator2={debator2} players={players}/>
+              <Nav />
+              <Vote {...routeProps} setVotes={setVotes} topic1={topic1} topic2={topic2} debator1={debators[0]} debator2={debators[1]} players={players}/>
             </section>
           )}
         }
@@ -142,8 +124,8 @@ function App() {
           const { id } = params
           return(
             <section className="debate">
-              
-              <Debate {...routeProps} topic1={topic1} topic2={topic2} debator1={debator1} debator2={debator2}/>
+              <Nav />
+              <Debate {...routeProps} topic1={topic1} topic2={topic2} debator1={debators[0]} debator2={debators[1]}/>
             </section>
           )}
         }
@@ -155,7 +137,7 @@ function App() {
           const { id } = params
           return(
           <section className="names">
-            
+            <Nav />
             <Names setPlayers= {setPlayers}/>
           </section>
           )}
@@ -176,7 +158,7 @@ function App() {
           const { id } = params
           return( 
             <section className="error">
-              Debatable
+              <Nav />
               You've arrived at the wrong conclusion.
             </section>
         )}
@@ -189,7 +171,7 @@ function App() {
           const { id } = params
           return( 
             <section className="splash">
-              Debatable
+              <header>{<GrStar />}{'DEBATABLE'}{<GrStar />}</header>
               <Link to= "/instructions">click to start</Link>
             </section>
         )}

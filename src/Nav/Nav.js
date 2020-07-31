@@ -8,7 +8,15 @@ import {GrStar} from 'react-icons/gr'
 
 function Nav() {
   return(
-    <nav>{<GrStar />}{<GrStar />}{<GrStar />}{'__DEBATABLE__'}{<GrStar />}{<GrStar />}{<GrStar />}</nav>
+    <nav>
+      <section className="stars">
+        {<GrStar />}{<GrStar />}{<GrStar />}
+      </section>
+        {'DEBATABLE'}
+      <section className="stars">
+        {<GrStar />}{<GrStar />}{<GrStar />}
+      </section>
+    </nav>
   )
 }
 
