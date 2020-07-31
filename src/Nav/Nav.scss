@@ -1,0 +1,17 @@
+@import "../styles/styles.scss";
+
+nav {
+  margin-top: 3vh;
+  font-family: $headerFont;
+  font-size: 7vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  border-bottom: 5px solid black;
+  width: 80vw;
+}
+
+svg {
+  height: 5vh;
+}
