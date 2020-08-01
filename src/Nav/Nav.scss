@@ -1,7 +1,7 @@
 @import "../styles/styles.scss";
 
 nav {
-  margin-top: 3vh;
+  border-top: 3vh solid white;
   font-family: $headerFont;
   font-size: 7vh;
   display: flex;
@@ -10,6 +10,7 @@ nav {
   align-items: baseline;
   border-bottom: 5px solid black;
   width: 80vw;
+  background-color: white;
 }
 
 svg {

@@ -17,7 +17,7 @@ function Vote(props) {
 
   return(
   <section className="votes">
-    <section className="j1-vote">
+    <section className="vote">
     Judge {props.judges[0].name} Votes
       <button onClick={( ) => {
                 if(!j1Voted){ 
@@ -42,7 +42,7 @@ function Vote(props) {
         Team: {props.topic2.correct_answer}
       </button>
     </section>
-    <section className="j2-vote">
+    <section className="vote">
     Judge {props.judges[1].name} Votes
         <button onClick={( ) => {
                   if(!j2Voted){
@@ -67,7 +67,7 @@ function Vote(props) {
           Team: {props.topic2.correct_answer}
       </button>
     </section>
-    <section className="j3-vote">
+    <section className="vote">
     Judge {props.judges[2].name} Votes
         <button onClick={( ) => {
                     if(!j3Voted){

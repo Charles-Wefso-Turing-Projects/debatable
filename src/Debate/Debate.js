@@ -42,12 +42,14 @@ function Debate(props) {
             <section className="debate-stage">  
               <section className="debator">
                 <section className="topic-one-card">
-                  Team {props.topic1.correct_answer}
+                  <section className="debator-card">{props.topic1.correct_answer}</section>
                 </section>
+                  <h2>{props.debators[0].name}</h2>
               </section>
       {gameState === "begin" &&
               <section className="clock">
                 <button
+                  className="card"
                   onClick={() => setGameState("prep")}
                   >
                   Start Research Phase
@@ -67,6 +69,7 @@ function Debate(props) {
       {gameState === "p1 inform" && 
                   <section className="clock">
                     <button
+                      className="card"
                       onClick={() => setGameState("p1 turn")}
                       >
                       Start Player One Turn
@@ -86,6 +89,7 @@ function Debate(props) {
       {gameState === "p2 inform" &&
               <section className="clock">
               <button
+                className="card"
                 onClick={() => setGameState("p2 turn")}
                 >
                 Start Player Two Turn
@@ -103,8 +107,9 @@ function Debate(props) {
       }
           <section className="debator">
             <section className="topic-two-card">
-              Team {props.topic2.correct_answer}
+            <section className="debator-card">{props.topic2.correct_answer}</section>
             </section>
+              <h2>{props.debators[1].name}</h2>
           </section>
         </section>  
 

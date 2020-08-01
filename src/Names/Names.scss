@@ -1,11 +1,14 @@
+@import "../styles/styles.scss";
+
 .names {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 100vw;
+  width: 80vw;
   border-bottom: 5px solid black;
+  background-color: $offwhite;
 }
 
 input {

@@ -42,6 +42,7 @@ function App() {
     <main className="App-main">
       <Nav />
       <section className="instructions">
+      <section className="card">
         <h1>Instructions for Playing</h1>
         <ol>
           <li>Enter Player Names - 
@@ -61,6 +62,7 @@ function App() {
         </ol>
         <Link to="/names" style={{ textDecoration: 'none' }}> BEGIN </Link>
       </section>
+      </section>
     </main>
   )
   
@@ -78,20 +80,22 @@ function App() {
           const { params } = routeProps.match
           const { id } = params
           return(
-            <section>
-              <Nav />
+            <>
+            <Nav />
+            <section className="winners">
               {votes[0].p1 > votes[0].p2 &&
-                <section className="wins" >
-                  Team {topic1.correct_answer} Wins
+                <section className="wins card" >
+                  Team {topic1.correct_answer} Wins.
                 </section>
               }
               {votes[0].p1 < votes[0].p2 &&
-                <section className="wins">
-                    Team {topic2.correct_answer} Wins
+                <section className="wins card">
+                    Team {topic2.correct_answer} Wins.
                 </section>
               }
               <button onClick={() => routeProps.history.push('/')}>Restart?</button>
             </section>
+            </>
           )
         }
         }
@@ -143,7 +147,7 @@ function App() {
           return(
           <section className="names">
             <Nav />
-            <Names setPlayers= {setPlayers}/>
+              <Names setPlayers= {setPlayers}/>
           </section>
           )}
           }
@@ -176,8 +180,10 @@ function App() {
           const { id } = params
           return( 
             <section className="splash">
-              <header>{<GrStar />}{'DEBATABLE'}{<GrStar />}</header>
-              <Link to= "/instructions">click to start</Link>
+              <section className="card">
+                <header>{<GrStar />}{'DEBATABLE'}{<GrStar />}</header>
+                <Link to= "/instructions">click to start</Link>
+              </section>
             </section>
         )}
       }
