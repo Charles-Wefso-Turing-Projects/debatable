@@ -9,10 +9,8 @@ function Debate(props) {
   const [gameState, setGameState] = useState("begin")
   const shuffle = require('shuffle-array')
 
-
-
   useEffect(() => {
-    if (props.debators === undefined) {
+    if (props.debators === undefined || props.judges === undefined) {
       setGameState("loading")
     }
   }, [])
@@ -32,131 +30,91 @@ function Debate(props) {
       }  
 
         <section className="debator-names">
-            <h1>{`Debator One: ${props.debators[0].name}`}</h1>
+          <section className="player-one-name">
+            <h1 style={{color: 'cornflowerblue' }}>{props.topic1.correct_answer}</h1>
+          </section>
           VS
-            <h1>{`Debator Two: ${props.debators[1].name}`}</h1>
+          <section className="player-two-name">
+            <h1 style={{color: 'darkred' }}>{props.topic2.correct_answer}</h1>
+          </section>
         </section>
 
-      {gameState === "begin" &&
-            <section>  
-              <section>
+            <section className="debate-stage">  
+              <section className="debator">
                 <section className="topic-one-card">
                   Team {props.topic1.correct_answer}
                 </section>
               </section>
-              <button
-                onClick={() => setGameState("prep")}
-                >
-                Start Research Phase
-              </button>
-              <section>
-                <section className="topic-two-card">
-                Team {props.topic2.correct_answer}
-                </section>
+      {gameState === "begin" &&
+              <section className="clock">
+                <button
+                  onClick={() => setGameState("prep")}
+                  >
+                  Start Research Phase
+                </button>
               </section>
-            </section>  
       }
 
       {gameState === "prep" && 
-          <section>  
-            <section>
-              <section className="topic-one-card">
-                Team {props.topic1.correct_answer}
-              </section>
+            <section className="clock">
+              <ReactCountdownClock seconds={3}
+                                    color="#000"
+                                    alpha={0.9}
+                                    size={300}
+                                    onComplete={() => setGameState("p1 inform")} />
             </section>
-            <ReactCountdownClock seconds={3}
-                                  color="#000"
-                                  alpha={0.9}
-                                  size={300}
-                                  onComplete={() => setGameState("p1 inform")} />
-            <section>
-              <section className="topic-two-card">
-              Team {props.topic2.correct_answer}
-              </section>
-            </section>
-          </section>  
       }
       {gameState === "p1 inform" && 
-          <section>
-            <section>
-                <section className="topic-one-card">
-                  Team {props.topic1.correct_answer}
-                  <button
-                    onClick={() => setGameState("p1 turn")}
-                    >
-                    Start Player One Turn
-                  </button>
-                </section>
-              </section>
-              <section>
-                <section className="topic-two-card">
-                Team {props.topic2.correct_answer}
-                </section>
-              </section>
-          </section>
+                  <section className="clock">
+                    <button
+                      onClick={() => setGameState("p1 turn")}
+                      >
+                      Start Player One Turn
+                    </button>
+                  </section>
+
       }
       {gameState === "p1 turn" && 
-          <section>  
-            <section>
-              <section className="topic-one-card">
-                Team {props.topic1.correct_answer}
-              </section>
+            <section className="clock">
+              <ReactCountdownClock seconds={6}
+                                    color="#000"
+                                    alpha={0.9}
+                                    size={300}
+                                    onComplete={() => setGameState("p2 inform")} />
             </section>
-            <ReactCountdownClock seconds={6}
-                                  color="#000"
-                                  alpha={0.9}
-                                  size={300}
-                                  onComplete={() => setGameState("p2 inform")} />
-            <section>
-              <section className="topic-two-card">
-              Team {props.topic2.correct_answer}
-              </section>
-            </section>
-        </section>  
       }
       {gameState === "p2 inform" &&
-        <section>
-          <section>
-            <section className="topic-one-card">
-              Team {props.topic1.correct_answer}
-            </section>
-          </section>
-          <section>
-            <section className="topic-two-card">
-            Team {props.topic2.correct_answer}
+              <section className="clock">
               <button
                 onClick={() => setGameState("p2 turn")}
                 >
                 Start Player Two Turn
               </button>
+              </section>
+      }
+      {gameState === "p2 turn" && 
+            <section className="clock">
+              <ReactCountdownClock seconds={6}
+                                    color="#000"
+                                    alpha={0.9}
+                                    size={300}
+                                    onComplete={() => pushToVote()} />
+            </section>
+      }
+          <section className="debator">
+            <section className="topic-two-card">
+              Team {props.topic2.correct_answer}
             </section>
           </section>
         </section>  
-      }
-      {gameState === "p2 turn" && 
-          <section>  
-            <section>
-              <section className="topic-one-card">
-                Team {props.topic1.correct_answer}
-              </section>
-            </section>
-            <ReactCountdownClock seconds={6}
-                                  color="#000"
-                                  alpha={0.9}
-                                  size={300}
-                                  onComplete={() => pushToVote()} />
-            <section>
-              <section className="topic-two-card">
-              Team {props.topic2.correct_answer}
-              </section>
-            </section>
-        </section>  
-      }
 
         <section className="judges-box">
-    <h1 className="judge">Judge: {props.judges[0].name}</h1>
-          <h1 className="judge">Judge: {props.judges[1].name}</h1>
-          <h1 className="judge">Judge: {props.judges[2].name}</h1>
+          Judges
+          <section className="judge-names">
+            <h1 className="judge">{props.judges[0].name}</h1>
+            <h1 className="judge">{props.judges[1].name}</h1>
+            <h1 className="judge">{props.judges[2].name}</h1>
+          </section>
         </section>
     </main>
   )
