@@ -44,11 +44,20 @@ function App() {
       <section className="instructions">
         <h1>Instructions for Playing</h1>
         <ol>
-          <li>Step One</li>
-          <li>Step Two</li>
-          <li>Step Three</li>
-          <li>Step Four</li>
-          <li>Step Five</li>
+          <li>Enter Player Names - 
+            Two users will be randomly selected to debate, while the rest will be judges.
+          </li>
+          <li>Each Debator will be assigned a subject argue in favor of</li>
+          <li>
+            <ol>Debate Phases
+              <li>At the beginning of the debate each player has 30 seconds to research their subjects</li>
+              <li>Player One has 60 seconds to explain why their team is superior</li>
+              <li>Player Two will recieve 60 seconds as well</li>
+              <li>Shouting and Crosstalk: Players will recieve 30 seconds to interupt and make personal attacks</li>
+            </ol>
+          </li>
+          <li>Voting: The Judges make their decision.</li>
+          <li>The person with the most votes wins. Seems like the obvious way to decide the winner.</li>
         </ol>
         <Link to="/names" style={{ textDecoration: 'none' }}> BEGIN </Link>
       </section>
@@ -72,20 +81,16 @@ function App() {
             <section>
               <Nav />
               {votes[0].p1 > votes[0].p2 &&
-
                 <section className="wins" >
                   Team {topic1.correct_answer} Wins
                 </section>
-
               }
-
               {votes[0].p1 < votes[0].p2 &&
-
                 <section className="wins">
                     Team {topic2.correct_answer} Wins
                 </section>
               }
-
+              <button onClick={() => routeProps.history.push('/')}>Restart?</button>
             </section>
           )
         }
@@ -112,7 +117,7 @@ function App() {
           return(
             <section className="vote">
               <Nav />
-              <Vote {...routeProps} setVotes={setVotes} topic1={topic1} topic2={topic2} debator1={debators[0]} debator2={debators[1]} players={players}/>
+              <Vote {...routeProps} setVotes={setVotes} topic1={topic1} topic2={topic2} debators={debators} judges={judges}/>
             </section>
           )}
         }
@@ -125,7 +130,7 @@ function App() {
           return(
             <section className="debate">
               <Nav />
-              <Debate {...routeProps} topic1={topic1} topic2={topic2} debator1={debators[0]} debator2={debators[1]}/>
+              <Debate {...routeProps} topic1={topic1} topic2={topic2} debators={debators} judges={judges}/>
             </section>
           )}
         }

@@ -18,7 +18,7 @@ function Vote(props) {
   return(
   <section className="votes">
     <section className="j1-vote">
-    Judge {props.players[2].name} Votes
+    Judge {props.judges[0].name} Votes
       <button onClick={( ) => {
                 if(!j1Voted){ 
                   setp1Votes(p1Votes + 1)
@@ -28,7 +28,7 @@ function Vote(props) {
                 }
               }
       }>
-        Player One
+        Team: {props.topic1.correct_answer}
       </button>
       <button onClick={( ) => {
                 if(!j1Voted){
@@ -39,11 +39,11 @@ function Vote(props) {
                 }
               }
       }>
-        Player Two
+        Team: {props.topic2.correct_answer}
       </button>
     </section>
     <section className="j2-vote">
-    Judge {props.players[3].name} Votes
+    Judge {props.judges[1].name} Votes
         <button onClick={( ) => {
                   if(!j2Voted){
                     setp1Votes(p1Votes + 1)
@@ -53,7 +53,7 @@ function Vote(props) {
                   }
                 }
         }>
-          Player One
+          Team: {props.topic1.correct_answer}
         </button>
         <button onClick={( ) => {
                   if(!j2Voted){
@@ -64,11 +64,11 @@ function Vote(props) {
                   }
                 }
         }>
-          Player Two
+          Team: {props.topic2.correct_answer}
       </button>
     </section>
     <section className="j3-vote">
-    Judge {props.players[4].name} Votes
+    Judge {props.judges[2].name} Votes
         <button onClick={( ) => {
                     if(!j3Voted){
                       setp1Votes(p1Votes + 1)
@@ -78,7 +78,7 @@ function Vote(props) {
                     }
                   }
           }>
-            Player One
+            Team: {props.topic1.correct_answer}
           </button>
           <button onClick={( ) => {
                     if(!j3Voted){
@@ -89,7 +89,7 @@ function Vote(props) {
                     }
                   }
           }>
-            Player Two
+            Team: {props.topic2.correct_answer}
         </button>
     </section>
       <Link to="/winner" onClick={() => {

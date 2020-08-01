@@ -9,14 +9,13 @@ function Debate(props) {
   const [gameState, setGameState] = useState("begin")
   const shuffle = require('shuffle-array')
 
-  const debators = [props.debator1, props.debator2]
 
 
   useEffect(() => {
-    if (debators === undefined) {
+    if (props.debators === undefined) {
       setGameState("loading")
     }
-  }, [debators])
+  }, [])
   
 
   const pushToVote = () => {
@@ -33,9 +32,9 @@ function Debate(props) {
       }  
 
         <section className="debator-names">
-            {/* <h1>{`Debator One: ${debators[0].name}`}</h1> */}
+            <h1>{`Debator One: ${props.debators[0].name}`}</h1>
           VS
-            {/* <h1>{`Debator Two: ${debators[1].name}`}</h1> */}
+            <h1>{`Debator Two: ${props.debators[1].name}`}</h1>
         </section>
 
       {gameState === "begin" &&
@@ -155,9 +154,9 @@ function Debate(props) {
       }
 
         <section className="judges-box">
-          <h1 className="judge">Judge: J1- Name</h1>
-          <h1 className="judge">Judge: J2- Name</h1>
-          <h1 className="judge">Judge: J3- Name</h1>
+    <h1 className="judge">Judge: {props.judges[0].name}</h1>
+          <h1 className="judge">Judge: {props.judges[1].name}</h1>
+          <h1 className="judge">Judge: {props.judges[2].name}</h1>
         </section>
     </main>
   )
