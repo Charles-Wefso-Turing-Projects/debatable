@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import ReactCountdownClock from 'react-countdown-clock'
-import usePlayer from '../Hooks/usePlayer'
 import './Debate.scss';
 import {Link} from 'react-router-dom'
 import {GrStar} from 'react-icons/gr'

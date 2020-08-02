@@ -27,9 +27,9 @@ function App() {
 
   const judges = players.filter(player => !debators.includes(player))
 
-  console.log("players", players)
-  console.log("debators", debators)
-  console.log("judges", judges)
+  // console.log("players", players)
+  // console.log("debators", debators)
+  // console.log("judges", judges)
 
   useEffect(() => {
     if (players) {
@@ -181,7 +181,7 @@ function App() {
           return( 
             <section className="splash">
               <section className="card">
-                <header>{<GrStar />}{'DEBATABLE'}{<GrStar />}</header>
+                <h1>{<GrStar />}{'DEBATABLE'}{<GrStar />}</h1>
                 <Link to= "/instructions">click to start</Link>
               </section>
             </section>

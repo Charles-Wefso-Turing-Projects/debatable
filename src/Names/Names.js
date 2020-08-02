@@ -1,5 +1,4 @@
 import React, { Component, useState} from 'react';
-import usePlayer from '../Hooks/usePlayer'
 import './Names.scss';
 import {Link} from 'react-router-dom'
 
@@ -65,7 +64,7 @@ class Names extends Component {
           placeholder="Player Five"
           onChange={this.handleChange}
           />
-        <Link to="/debate" onClick={this.handleSubmit}>BEGIN!</Link>
+        <Link to="/debate" onClick={this.handleSubmit}>Submit</Link>
       </form>
     )
   }

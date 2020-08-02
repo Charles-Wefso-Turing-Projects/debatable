@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import ReactCountdownClock from 'react-countdown-clock'
-import usePlayer from '../Hooks/usePlayer'
 import './Nav.scss';
 import {Link} from 'react-router-dom'
 import {GrStar} from 'react-icons/gr'
@@ -12,7 +10,9 @@ function Nav() {
       <section className="stars">
         {<GrStar />}{<GrStar />}{<GrStar />}
       </section>
+      <section aria-label="debatable">
         {'DEBATABLE'}
+      </section>
       <section className="stars">
         {<GrStar />}{<GrStar />}{<GrStar />}
       </section>
