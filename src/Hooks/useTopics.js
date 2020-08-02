@@ -9,8 +9,8 @@ const useTopic = (category) => {
     const triviaFetch = () => {
       fetch(`https://opentdb.com/api.php?amount=1&category=${category}&difficulty=easy&type=multiple`)
         .then((res) => res.json())
-        // .then((result) => console.log(result))
-        .then(result => setTopic(result.results[0]))
+        .then((result) => console.log(result))
+        .then((result) => setTopic(result.results[0]))
         .catch((err) => console.log(err.message))
     }
 
