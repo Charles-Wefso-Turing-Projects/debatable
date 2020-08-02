@@ -8,28 +8,21 @@ import useTopics from '../Hooks/useTopics'
 import categories from '../categories'
 import {GrStar} from 'react-icons/gr'
 import {
-  Switch, Route, withRouter, Link
+  Switch, Route, Link
 } from 'react-router-dom'
 
 
 function App() {
-  const shuffle = require('shuffle-array')
   const [loading, setLoading] = useState(true)
   const [votes, setVotes] = useState([])
   const [players, setPlayers] = useState([])
-
-  const category1 = shuffle.pick(categories)
-  const category2 = shuffle.pick(categories)
-  const topic1 = useTopics(category1)
-  const topic2 = useTopics(category2)
+  
+  const shuffle = require('shuffle-array')
+  const [topic1, setTopic1] = useState("")
+  const [topic2, setTopic2] = useState("")
 
   const debators = shuffle.pick(players, { 'picks': 2 });
-
   const judges = players.filter(player => !debators.includes(player))
-
-  // console.log("players", players)
-  // console.log("debators", debators)
-  // console.log("judges", judges)
 
   useEffect(() => {
     if (players) {
@@ -77,34 +70,33 @@ function App() {
       <Route
         path="/winner"
         render={(routeProps) => {
-          const { params } = routeProps.match
-          const { id } = params
-          return(
-            <>
-            <Nav />
-            <section className="winners">
-              {votes[0].p1 > votes[0].p2 &&
-                <section className="wins card" >
-                  Team {topic1.correct_answer} Wins.
-                </section>
-              }
-              {votes[0].p1 < votes[0].p2 &&
-                <section className="wins card">
-                    Team {topic2.correct_answer} Wins.
-                </section>
-              }
-              <button onClick={() => routeProps.history.push('/')}>Restart?</button>
-            </section>
-            </>
-          )
+          if(votes[0]){
+            return(
+              <>
+              <Nav />
+              <section className="winners">
+                {votes[0].p1 > votes[0].p2 &&
+                  <section className="wins card" >
+                    Team {topic1} Wins.
+                  </section>
+                }
+                {votes[0].p1 < votes[0].p2 &&
+                  <section className="wins card">
+                      Team {topic2} Wins.
+                  </section>
+                }
+                <button onClick={() => routeProps.history.push('/')}>Restart?</button>
+              </section>
+              </>
+            )
+          }
+          routeProps.history.push('/error')
         }
         }
       />
         <Route
         path="/loading"
         render={(routeProps) => {
-          const { params } = routeProps.match
-          const { id } = params
           return(
             <section className="debate">
               <Nav />
@@ -116,8 +108,6 @@ function App() {
       <Route
         path="/vote"
         render={(routeProps) => {
-          const { params } = routeProps.match
-          const { id } = params
           return(
             <section className="vote">
               <Nav />
@@ -129,12 +119,10 @@ function App() {
       <Route
         path="/debate"
         render={(routeProps) => {
-          const { params } = routeProps.match
-          const { id } = params
           return(
             <section className="debate">
               <Nav />
-              <Debate {...routeProps} topic1={topic1} topic2={topic2} debators={debators} judges={judges}/>
+              <Debate {...routeProps} setTopic1={setTopic1} setTopic2={setTopic2} debators={debators} judges={judges}/>
             </section>
           )}
         }
@@ -142,12 +130,10 @@ function App() {
       <Route
         path="/names"
         render={(routeProps) => {
-          const { params } = routeProps.match
-          const { id } = params
           return(
           <section className="names">
             <Nav />
-              <Names setPlayers= {setPlayers}/>
+              <Names {...routeProps} setPlayers= {setPlayers}/>
           </section>
           )}
           }
@@ -155,20 +141,17 @@ function App() {
       <Route 
         exact path="/instructions" 
         render={(routeProps) => {
-          const { params } = routeProps.match
-          const { id } = params
           return( instructions )
         }}
       />
         <Route 
         exact path="/error" 
         render={(routeProps) => {
-          const { params } = routeProps.match
-          const { id } = params
           return( 
-            <section className="error">
+            <section className="error card">
               <Nav />
-              You've arrived at the wrong conclusion.
+              <h1>You've arrived at the wrong conclusion.</h1>
+              <button onClick={() => routeProps.history.push('/')}>Start again?</button>
             </section>
         )}
       }
@@ -176,8 +159,6 @@ function App() {
       <Route 
         exact path="/" 
         render={(routeProps) => {
-          const { params } = routeProps.match
-          const { id } = params
           return( 
             <section className="splash">
               <section className="card">

@@ -1,4 +1,4 @@
-import React, { Component, useState} from 'react';
+import React, { Component } from 'react';
 import './Names.scss';
 import {Link} from 'react-router-dom'
 
@@ -15,9 +15,16 @@ class Names extends Component {
   };
 
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault()
     const {p1, p2, p3, p4, p5} = this.state
-    this.props.setPlayers([{"name": p1, "id": 1}, {"name": p2, "id": 2}, {"name": p3, "id": 3 }, {"name": p4, "id": 4}, {"name": p5, "id": 5}])
+    if(p1 && p2 && p2 && p4 && p5){
+      this.props.setPlayers([{"name": p1, "id": 1}, {"name": p2, "id": 2}, {"name": p3, "id": 3 }, {"name": p4, "id": 4}, {"name": p5, "id": 5}])
+      this.props.history.push('/debate')
+    } else {
+      alert("Heeeeeeeeelllllll nah!")
+      this.props.history.push('/names')
+    }
   }
 
   render() {

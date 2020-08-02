@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import ReactCountdownClock from 'react-countdown-clock'
+import React, {useState} from 'react';
 import './Vote.scss';
 import {Link} from 'react-router-dom'
 
@@ -16,6 +15,7 @@ function Vote(props) {
 
   return(
   <section className="votes">
+    {!props.judges[0] && props.history.push('/error')}
     <section className="vote">
     Judge {props.judges[0].name} Votes
       <button onClick={( ) => {
@@ -27,7 +27,7 @@ function Vote(props) {
                 }
               }
       }>
-        Team: {props.topic1.correct_answer}
+        Team: {props.topic1}
       </button>
       <button onClick={( ) => {
                 if(!j1Voted){
@@ -38,7 +38,7 @@ function Vote(props) {
                 }
               }
       }>
-        Team: {props.topic2.correct_answer}
+        Team: {props.topic2}
       </button>
     </section>
     <section className="vote">
@@ -52,7 +52,7 @@ function Vote(props) {
                   }
                 }
         }>
-          Team: {props.topic1.correct_answer}
+          Team: {props.topic1}
         </button>
         <button onClick={( ) => {
                   if(!j2Voted){
@@ -63,7 +63,7 @@ function Vote(props) {
                   }
                 }
         }>
-          Team: {props.topic2.correct_answer}
+          Team: {props.topic2}
       </button>
     </section>
     <section className="vote">
@@ -77,7 +77,7 @@ function Vote(props) {
                     }
                   }
           }>
-            Team: {props.topic1.correct_answer}
+            Team: {props.topic1}
           </button>
           <button onClick={( ) => {
                     if(!j3Voted){
@@ -88,7 +88,7 @@ function Vote(props) {
                     }
                   }
           }>
-            Team: {props.topic2.correct_answer}
+            Team: {props.topic2}
         </button>
     </section>
       <Link to="/winner" onClick={() => {

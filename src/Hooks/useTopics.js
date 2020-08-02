@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const useTopic = (category) => {
-  const [topic, setTopic] = useState({})
+  const [topic, setTopic] = useState("")
 
   // useEffect
 
@@ -9,8 +9,8 @@ const useTopic = (category) => {
     const triviaFetch = () => {
       fetch(`https://opentdb.com/api.php?amount=1&category=${category}&difficulty=easy&type=multiple`)
         .then((res) => res.json())
-        .then((result) => console.log(result))
-        .then((result) => setTopic(result.results[0]))
+        // .then((result) => console.log(result))
+        .then((result) => setTopic(result.results[0].correct_answer))
         .catch((err) => console.log(err.message))
     }
 

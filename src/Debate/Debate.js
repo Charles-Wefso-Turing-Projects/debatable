@@ -1,19 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import ReactCountdownClock from 'react-countdown-clock'
 import './Debate.scss';
-import {Link} from 'react-router-dom'
-import {GrStar} from 'react-icons/gr'
+import useTopics from '../Hooks/useTopics'
+import categories from '../categories'
 
 function Debate(props) {
   const [gameState, setGameState] = useState("begin")
-  const shuffle = require('shuffle-array')
 
-  useEffect(() => {
-    if (props.debators === undefined || props.judges === undefined) {
-      setGameState("loading")
-    }
-  }, [])
-  
+  const shuffle = require('shuffle-array')
+  const category1 = shuffle.pick(categories)
+  const category2 = shuffle.pick(categories)
+  const topic1 = useTopics(category1)
+  const topic2 = useTopics(category2)
+  props.setTopic1(topic1)
+  props.setTopic2(topic2)
 
   const pushToVote = () => {
     props.history.push('/vote')
@@ -30,20 +30,22 @@ function Debate(props) {
 
         <section className="debator-names">
           <section className="player-one-name">
-            <h1 style={{color: 'cornflowerblue' }}>{props.topic1.correct_answer}</h1>
+            <h1 style={{color: 'cornflowerblue' }}>{topic1}</h1>
           </section>
           VS
           <section className="player-two-name">
-            <h1 style={{color: 'darkred' }}>{props.topic2.correct_answer}</h1>
+            <h1 style={{color: 'darkred' }}>{topic2}</h1>
           </section>
         </section>
 
             <section className="debate-stage">  
               <section className="debator">
                 <section className="topic-one-card">
-                  <section className="debator-card">{props.topic1.correct_answer}</section>
+                  <section className="debator-card">{topic1}</section>
                 </section>
+                {props.debators[0] &&
                   <h2>{props.debators[0].name}</h2>
+                }
               </section>
       {gameState === "begin" &&
               <section className="clock">
@@ -106,19 +108,26 @@ function Debate(props) {
       }
           <section className="debator">
             <section className="topic-two-card">
-            <section className="debator-card">{props.topic2.correct_answer}</section>
+            <section className="debator-card">{topic2}</section>
             </section>
+            {props.debators[1] &&
               <h2>{props.debators[1].name}</h2>
+            }
           </section>
         </section>  
 
         <section className="judges-box">
           Judges
-          <section className="judge-names">
-            <h1 className="judge">{props.judges[0].name}</h1>
-            <h1 className="judge">{props.judges[1].name}</h1>
-            <h1 className="judge">{props.judges[2].name}</h1>
-          </section>
+          {props.judges[0] &&
+            <section className="judge-names">
+              <h1 className="judge">{props.judges[0].name}</h1>
+              <h1 className="judge">{props.judges[1].name}</h1>
+              <h1 className="judge">{props.judges[2].name}</h1>
+            </section>
+          }
+          {!props.judges[0] && 
+            props.history.push('/error')
+          }
         </section>
     </main>
   )
