@@ -8,10 +8,17 @@ const useTopic = (category) => {
   useEffect(() => {
     const triviaFetch = () => {
       fetch(`https://opentdb.com/api.php?amount=1&category=${category}&difficulty=easy&type=multiple`)
-        .then((res) => res.json())
-        // .then((result) => console.log(result))
-        .then((result) => setTopic(result.results[0].correct_answer))
-        .catch((err) => console.log(err.message))
+      .then(
+        (response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Reframe your argumnet.");
+          }
+        }
+      )
+      .then((result) => setTopic(result.results[0].correct_answer))
+      .catch((err) => console.log(err.message))
     }
 
     triviaFetch()
