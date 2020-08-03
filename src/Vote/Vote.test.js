@@ -13,10 +13,7 @@ const topic2 = {correct_answer: "Skateboarding"}
 describe('Vote', () => {
 
   it('should display all Vote elements on load', () => {
-    const { getByText, getByRole, getAllByRole } = render(<MemoryRouter><Vote judges={judges} 
-                                                                     topic1={topic1} 
-                                                                     topic2={topic2}
-                                                                     />
+    const { getByText, getByRole, getAllByRole } = render(<MemoryRouter><Vote judges={judges} topic1={topic1} topic2={topic2}/>
                                                  </MemoryRouter>)
     const vote1 = getByText('Judge Leonardo Votes')
     const voteButtonTeam1 = getAllByRole('button', { name: 'Team: Pizza' })

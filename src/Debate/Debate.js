@@ -1,19 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import ReactCountdownClock from 'react-countdown-clock'
 import './Debate.scss';
-import useTopics from '../Hooks/useTopics'
+import useTopic from '../Hooks/useTopic'
 import categories from '../categories'
 
 function Debate(props) {
   const [gameState, setGameState] = useState("begin")
-
   const shuffle = require('shuffle-array')
   const category1 = shuffle.pick(categories)
   const category2 = shuffle.pick(categories)
-  const topic1 = useTopics(category1)
-  const topic2 = useTopics(category2)
+  const topic1 = useTopic(category1)
+  const topic2 = useTopic(category2)
   props.setTopic1(topic1)
   props.setTopic2(topic2)
+  
+  
+  var Scraper = require("image-scraper");
+ 
+  var scraper = new Scraper(`https://cors-anywhere.herokuapp.com/https://www.bing.com/images/search?q=banana`);
+
 
   const pushToVote = () => {
     props.history.push('/vote')

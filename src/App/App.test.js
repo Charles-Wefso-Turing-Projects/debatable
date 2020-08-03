@@ -73,9 +73,9 @@ describe('App', () => {
     expect(testHistoryObject.location.pathname).toEqual('/names')
   })
 
-  it('should change to the route path of /debate when the `submit` button is clicked on the `names` component', async () => {
+  it('should render the `names` component when the route is `names`', async () => {
     const testHistoryObject = createMemoryHistory()
-    const { getByRole } = render(
+    const { getByRole, getAllByRole } = render(
       <Router history={testHistoryObject}>
         <App />
       </Router>
@@ -88,10 +88,10 @@ describe('App', () => {
     expect(beginButton).toBeInTheDocument()
     fireEvent.click(beginButton)
     expect(testHistoryObject.location.pathname).toEqual('/names')
+    const inputs = getAllByRole('textbox')
     const submitButton = getByRole('link', { name: 'Submit'})
     expect(submitButton).toBeInTheDocument()
-    fireEvent.click(submitButton)
-    expect(testHistoryObject.location.pathname).toEqual('/debate')
+    expect(inputs).toHaveLength(5)
   })
 
 })

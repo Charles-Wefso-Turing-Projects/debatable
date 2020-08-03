@@ -6,25 +6,39 @@ class Names extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      ready : false
     };
   }
+
+  componentDidUpdate() {
+    if(!this.state.ready){
+      const {p1, p2, p3, p4, p5} = this.state
+      if(p1 && p2 && p3 && p4 && p5){
+        this.setState({
+          ready : true
+        })
+      }
+    }
+    if(this.state.ready){
+      const {p1, p2, p3, p4, p5} = this.state
+      if(!p1 || !p2 || !p3 || !p4 || !p5){
+        this.setState({
+          ready : false
+        })
+      }
+    }
+  }  
 
   handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   };
 
-
   handleSubmit = (e) => {
     e.preventDefault()
     const {p1, p2, p3, p4, p5} = this.state
-    if(p1 && p2 && p2 && p4 && p5){
-      this.props.setPlayers([{"name": p1, "id": 1}, {"name": p2, "id": 2}, {"name": p3, "id": 3 }, {"name": p4, "id": 4}, {"name": p5, "id": 5}])
-      this.props.history.push('/debate')
-    } else {
-      alert("Heeeeeeeeelllllll nah!")
-      this.props.history.push('/names')
-    }
+    this.props.setPlayers([{"name": p1, "id": 1}, {"name": p2, "id": 2}, {"name": p3, "id": 3 }, {"name": p4, "id": 4}, {"name": p5, "id": 5}])
+    this.props.history.push('/debate')
   }
 
   render() {
@@ -71,7 +85,12 @@ class Names extends Component {
           placeholder="Player Five"
           onChange={this.handleChange}
           />
-        <Link to="/debate" onClick={this.handleSubmit}>Submit</Link>
+         { !this.state.ready ? (
+             <h1>Please Add Five Names</h1>  
+           ) : (
+             <Link to="/debate" onClick={this.handleSubmit}>Submit</Link>   
+          )
+         } 
       </form>
     )
   }

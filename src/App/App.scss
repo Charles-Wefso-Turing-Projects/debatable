@@ -1,12 +1,12 @@
 @import "../styles/styles.scss";
 
-div {
+div, .error-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: $background;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 .instructions, .winners, .splash {

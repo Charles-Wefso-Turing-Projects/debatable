@@ -4,8 +4,6 @@ import Nav from '../Nav/Nav'
 import Names from '../Names/Names'
 import Debate from '../Debate/Debate'
 import Vote from '../Vote/Vote'
-import useTopics from '../Hooks/useTopics'
-import categories from '../categories'
 import {GrStar} from 'react-icons/gr'
 import {
   Switch, Route, Link
@@ -148,10 +146,12 @@ function App() {
         exact path="/error" 
         render={(routeProps) => {
           return( 
-            <section className="error card">
+            <section className="error-page">
               <Nav />
-              <h1>You've arrived at the wrong conclusion.</h1>
-              <button onClick={() => routeProps.history.push('/')}>Start again?</button>
+              <section className="error card">
+                <h1>You've arrived at the wrong conclusion.</h1>
+                <button onClick={() => routeProps.history.push('/')}>Start again?</button>
+              </section>
             </section>
         )}
       }

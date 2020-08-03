@@ -13,7 +13,7 @@ const useTopic = (category) => {
           if (response.ok) {
             return response.json();
           } else {
-            throw new Error("Reframe your argumnet.");
+            throw new Error("Reframe your argument.");
           }
         }
       )
