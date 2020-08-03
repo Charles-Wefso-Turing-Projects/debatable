@@ -9,17 +9,22 @@ function Debate(props) {
   const shuffle = require('shuffle-array')
   const category1 = shuffle.pick(categories)
   const category2 = shuffle.pick(categories)
+  const category3 = shuffle.pick(categories)
   const topic1 = useTopic(category1)
   const topic2 = useTopic(category2)
+  const topic3 = shuffle.pick(categories)
   props.setTopic1(topic1)
   props.setTopic2(topic2)
-  
-  
-  var Scraper = require("image-scraper");
- 
-  var scraper = new Scraper(`https://cors-anywhere.herokuapp.com/https://www.bing.com/images/search?q=banana`);
 
-
+  useEffect(() => {
+    if(topic1 !== typeof Number) {
+      props.setTopic1(topic3)
+    }
+    if(topic2 !== typeof Number) {
+      props.setTopic2(topic3)
+    }
+  }, [])
+  
   const pushToVote = () => {
     props.history.push('/vote')
   }
@@ -49,7 +54,7 @@ function Debate(props) {
                   <section className="debator-card">{topic1}</section>
                 </section>
                 {props.debators[0] &&
-                  <h2>{props.debators[0].name}</h2>
+                  <h2>Player One: {props.debators[0].name}</h2>
                 }
               </section>
       {gameState === "begin" &&
@@ -78,7 +83,7 @@ function Debate(props) {
                       className="card"
                       onClick={() => setGameState("p1 turn")}
                       >
-                      Start Player One Turn
+                    <h2>Start {props.debators[0].name}'s Turn</h2>
                     </button>
                   </section>
 
@@ -98,7 +103,7 @@ function Debate(props) {
                 className="card"
                 onClick={() => setGameState("p2 turn")}
                 >
-                Start Player Two Turn
+                <h2>Start {props.debators[1].name}'s Turn</h2>
               </button>
               </section>
       }
@@ -116,7 +121,7 @@ function Debate(props) {
             <section className="debator-card">{topic2}</section>
             </section>
             {props.debators[1] &&
-              <h2>{props.debators[1].name}</h2>
+              <h2>Player Two: {props.debators[1].name}</h2>
             }
           </section>
         </section>  

@@ -35,22 +35,17 @@ function App() {
       <section className="instructions">
       <section className="card">
         <h1>Instructions for Playing</h1>
-        <ol>
-          <li>Enter Player Names - 
-            Two users will be randomly selected to debate, while the rest will be judges.
-          </li>
-          <li>Each Debator will be assigned a subject argue in favor of</li>
-          <li>
-            <ol>Debate Phases
-              <li>At the beginning of the debate each player has 30 seconds to research their subjects</li>
-              <li>Player One has 60 seconds to explain why their team is superior</li>
-              <li>Player Two will recieve 60 seconds as well</li>
-              <li>Shouting and Crosstalk: Players will recieve 30 seconds to interupt and make personal attacks</li>
-            </ol>
-          </li>
-          <li>Voting: The Judges make their decision.</li>
-          <li>The person with the most votes wins. Seems like the obvious way to decide the winner.</li>
-        </ol>
+        <section className="rules">
+        <p>Enter Player Names - Two will be randomly selected to debate, the rest are judges.</p>
+        <p>Each Debator will be assigned a subject to represent.</p>
+          <ol>Debate Phases
+            <li>At the beginning of the debate players have 30 seconds to research their subjects.</li>
+            <li>Player One has 60 seconds to explain why their topic is superior.</li>
+            <li>Player Two will recieve 60 seconds as well.</li>
+          </ol>
+        <p>Voting: The Judges make their decision.</p>
+        <p>The person with the most votes wins. Seems like the obvious way to decide the winner.</p>
+        </section>
         <Link to="/names" style={{ textDecoration: 'none' }}> BEGIN </Link>
       </section>
       </section>
@@ -107,9 +102,11 @@ function App() {
         path="/vote"
         render={(routeProps) => {
           return(
-            <section className="vote">
+            <section className="vote-page">
               <Nav />
-              <Vote {...routeProps} setVotes={setVotes} topic1={topic1} topic2={topic2} debators={debators} judges={judges}/>
+              <section>
+                <Vote {...routeProps} setVotes={setVotes} topic1={topic1} topic2={topic2} debators={debators} judges={judges}/>
+              </section>
             </section>
           )}
         }
@@ -129,9 +126,11 @@ function App() {
         path="/names"
         render={(routeProps) => {
           return(
-          <section className="names">
+          <section className="name-page">
             <Nav />
+            <section className="names">
               <Names {...routeProps} setPlayers= {setPlayers}/>
+            </section>
           </section>
           )}
           }
@@ -145,14 +144,16 @@ function App() {
         <Route 
         exact path="/error" 
         render={(routeProps) => {
-          return( 
-            <section className="error-page">
-              <Nav />
-              <section className="error card">
-                <h1>You've arrived at the wrong conclusion.</h1>
-                <button onClick={() => routeProps.history.push('/')}>Start again?</button>
-              </section>
-            </section>
+          return(
+            <section className="debate">
+                <Nav />
+                <section className="error-page">
+                  <section className="error card">
+                    <h1>You've arrived at the wrong conclusion.</h1>
+                    <button onClick={() => routeProps.history.push('/')}>Start again?</button>
+                  </section>
+                </section>
+            </section> 
         )}
       }
       />

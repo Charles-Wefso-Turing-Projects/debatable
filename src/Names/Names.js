@@ -44,54 +44,56 @@ class Names extends Component {
   render() {
     const {p1, p2, p3, p4, p5} = this.state
     return (
-      <form className="names">
-        <input
-          aria-label="player-one"
-          type="text"
-          name="p1"
-          value={p1}
-          placeholder="Player One"
-          onChange={this.handleChange}
-        />
-        <input
-          aria-label="player-two"
-          type="text"
-          name="p2"
-          value={p2}
-          placeholder="Player Two"
-          onChange={this.handleChange}
-          />
-        <input
-          aria-label="player-three"
-          type="text"
-          name="p3"
-          value={p3}
-          placeholder="Player Three"
-          onChange={this.handleChange}
-          />
-        <input
-          aria-label="player-four"
-          type="text"
-          name="p4"
-          value={p4}
-          placeholder="Player Four"
-          onChange={this.handleChange}
-          />
-        <input 
-          aria-label="player-five"
-          type="text"
-          name="p5"
-          value={p5}
-          placeholder="Player Five"
-          onChange={this.handleChange}
-          />
-         { !this.state.ready ? (
-             <h1>Please Add Five Names</h1>  
-           ) : (
-             <Link to="/debate" onClick={this.handleSubmit}>Submit</Link>   
-          )
-         } 
-      </form>
+      <section className="name-card">
+        <form className="names">
+          <input
+            aria-label="player-one"
+            type="text"
+            name="p1"
+            value={p1}
+            placeholder="Player One"
+            onChange={this.handleChange}
+            />
+          <input
+            aria-label="player-two"
+            type="text"
+            name="p2"
+            value={p2}
+            placeholder="Player Two"
+            onChange={this.handleChange}
+            />
+          <input
+            aria-label="player-three"
+            type="text"
+            name="p3"
+            value={p3}
+            placeholder="Player Three"
+            onChange={this.handleChange}
+            />
+          <input
+            aria-label="player-four"
+            type="text"
+            name="p4"
+            value={p4}
+            placeholder="Player Four"
+            onChange={this.handleChange}
+            />
+          <input 
+            aria-label="player-five"
+            type="text"
+            name="p5"
+            value={p5}
+            placeholder="Player Five"
+            onChange={this.handleChange}
+            />
+          { !this.state.ready ? (
+            <h1>Please Add Five Names</h1>  
+            ) : (
+              <Link to="/debate" onClick={this.handleSubmit}>Submit</Link>   
+              )
+              } 
+        </form>
+      </section>
     )
   }
 }

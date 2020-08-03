@@ -41,7 +41,6 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-left: 5vw;
   font-size: 5vh;
   border-bottom: 5px solid black;
 }
@@ -55,7 +54,6 @@ h2 {
   justify-content: space-evenly;
   align-items: center;
   font-size: 5vh;
-  margin-left: 5vw;
 }
 
 .topic-one-card, .topic-two-card {
@@ -118,10 +116,6 @@ h2 {
   width: inherit;
 }
 
-.player-one-name {
-  margin-right: 10vw;
-}
-
 .player-two-name {
   margin-left: 10vw;
 }
@@ -133,6 +127,24 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $offwhite;
+  width: 90vw;
 }
 
 .react-countdown-clock {

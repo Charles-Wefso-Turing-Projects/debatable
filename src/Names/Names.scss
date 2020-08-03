@@ -5,12 +5,46 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: fit-content;
+  width: fit-content;
+  margin-top: 3vh;
+}
+
+.name-page {
   height: 100vh;
-  width: 80vw;
-  border-bottom: 5px solid black;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: $offwhite;
+  overflow: hidden;
+}
+
+.name-card {
+  margin-top: 30vh;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid black;
+  height: fit-content;
+  width: 40vh;
+  -webkit-box-shadow: 3px 5px 5px 3px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 5px 5px 3px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 5px 5px 3px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
 input {
   text-align: center;
+  height: 4vh;
+  width: 20vw;
+}
+
+a {
+  height: 4vh;
+  width: 10vw;
+  font-size: 3vh;
+  font-style: $bodyFont;
 }
