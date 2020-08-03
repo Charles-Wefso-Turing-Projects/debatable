@@ -93,13 +93,18 @@ function Vote(props) {
         </button>
     </section>
     </section> 
-    <section>
-      <Link to="/winner" onClick={() => {
-        props.setVotes([{"p1": p1Votes, "p2": p2Votes}])
-      }}>
-          Submit Votes
-      </Link>
-    </section>
+    {!j1Voted || !j2Voted || !j3Voted &&
+      <h1>Someone Needs to Vote</h1>
+    }
+    {j1Voted && j2Voted && j3Voted &&
+      <section>
+        <Link to="/winner" onClick={() => {
+          props.setVotes([{"p1": p1Votes, "p2": p2Votes}])
+        }}>
+            Submit Votes
+        </Link>
+      </section>
+    }
     </main>
   )
 }

@@ -60,7 +60,6 @@ function Debate(props) {
       {gameState === "begin" &&
               <section className="clock">
                 <button
-                  className="card"
                   onClick={() => setGameState("prep")}
                   >
                   Start Research Phase
@@ -80,7 +79,7 @@ function Debate(props) {
       {gameState === "p1 inform" && 
                   <section className="clock">
                     <button
-                      className="card"
+  
                       onClick={() => setGameState("p1 turn")}
                       >
                     <h2>Start {props.debators[0].name}'s Turn</h2>
@@ -100,7 +99,6 @@ function Debate(props) {
       {gameState === "p2 inform" &&
               <section className="clock">
               <button
-                className="card"
                 onClick={() => setGameState("p2 turn")}
                 >
                 <h2>Start {props.debators[1].name}'s Turn</h2>
