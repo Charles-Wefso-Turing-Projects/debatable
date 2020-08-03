@@ -4,8 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/user-event": "^7.2.1",
-    "image-scraper": "^0.2.1",
-    "images-scraper": "^5.0.7",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "react": "^16.13.1",
     "react-countdown-clock": "^2.7.0",
@@ -20,9 +18,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [

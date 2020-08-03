@@ -15,13 +15,13 @@ describe('Names', () => {
     const player3input = getByLabelText('player-three')
     const player4input = getByLabelText('player-four')
     const player5input = getByLabelText('player-five')
-    const button = getByRole('link')
+    const warning = getByRole('heading', { name: "Please Add Five Names"})
+    expect(warning).toBeInTheDocument()
     expect(player1input).toBeInTheDocument()
     expect(player2input).toBeInTheDocument()
     expect(player3input).toBeInTheDocument()
     expect(player4input).toBeInTheDocument()
     expect(player5input).toBeInTheDocument()
-    expect(button).toBeInTheDocument()
   })
 
   it('should display all Names elements on load', () => {

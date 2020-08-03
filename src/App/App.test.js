@@ -52,7 +52,7 @@ describe('App', () => {
     const list = getAllByRole('list')
     const beginButton = getByRole('link', { name: 'BEGIN'})
     expect(heading).toBeInTheDocument()
-    expect(list).toHaveLength(2)
+    expect(list).toHaveLength(1)
     expect(beginButton).toBeInTheDocument()
   })
 
@@ -89,8 +89,8 @@ describe('App', () => {
     fireEvent.click(beginButton)
     expect(testHistoryObject.location.pathname).toEqual('/names')
     const inputs = getAllByRole('textbox')
-    const submitButton = getByRole('link', { name: 'Submit'})
-    expect(submitButton).toBeInTheDocument()
+    const warning = getByRole('heading', { name: "Please Add Five Names"})
+    expect(warning).toBeInTheDocument()
     expect(inputs).toHaveLength(5)
   })
 

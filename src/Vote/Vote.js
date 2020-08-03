@@ -19,7 +19,7 @@ function Vote(props) {
     {!props.judges[0] && props.history.push('/error')}
     <section className="vote">
     Judge {props.judges[0].name} Votes
-      <button style={{ 'background-color': 'cornflowerblue' }} onClick={( ) => {
+      <button style={{ 'backgroundColor': 'cornflowerblue' }} onClick={( ) => {
         if(!j1Voted){ 
           setp1Votes(p1Votes + 1)
           setJ1Voted(true)
@@ -28,9 +28,9 @@ function Vote(props) {
         }
       }
     }>
-        Team: {props.topic1}
+        <h3>Team: {props.topic1.correct_answer}</h3>
       </button>
-      <button style={{ 'background-color': 'darkred' }}onClick={( ) => {
+      <button style={{ 'backgroundColor': 'darkred' }}onClick={( ) => {
         if(!j1Voted){
           setp2Votes(p2Votes + 1)
           setJ1Voted(true)
@@ -39,12 +39,12 @@ function Vote(props) {
         }
       }
     }>
-        Team: {props.topic2}
+        <h3>Team: {props.topic2.correct_answer}</h3>
       </button>
     </section>
     <section className="vote">
     Judge {props.judges[1].name} Votes
-        <button style={{ 'background-color': 'cornflowerblue' }} onClick={( ) => {
+        <button style={{ 'backgroundColor': 'cornflowerblue' }} onClick={( ) => {
           if(!j2Voted){
             setp1Votes(p1Votes + 1)
             setJ2Voted(true)
@@ -53,9 +53,9 @@ function Vote(props) {
           }
         }
       }>
-          Team: {props.topic1}
+          <h3>Team: {props.topic1.correct_answer}</h3>
         </button>
-        <button style={{ 'background-color': 'darkred' }}onClick={( ) => {
+        <button style={{ 'backgroundColor': 'darkred' }}onClick={( ) => {
           if(!j2Voted){
             setp2Votes(p2Votes + 1)
             setJ2Voted(true)
@@ -64,12 +64,12 @@ function Vote(props) {
           }
         }
       }>
-          Team: {props.topic2}
+          <h3>Team: {props.topic2.correct_answer}</h3>
       </button>
     </section>
     <section className="vote">
     Judge {props.judges[2].name} Votes
-        <button style={{ 'background-color': 'cornflowerblue' }} onClick={( ) => {
+        <button style={{ 'backgroundColor': 'cornflowerblue' }} onClick={( ) => {
           if(!j3Voted){
             setp1Votes(p1Votes + 1)
             setJ3Voted(true)
@@ -78,9 +78,9 @@ function Vote(props) {
           }
         }
       }>
-            Team: {props.topic1}
+            <h3>Team: {props.topic1.correct_answer}</h3>
           </button>
-          <button style={{ 'background-color': 'darkred' }} onClick={( ) => {
+          <button style={{ 'backgroundColor': 'darkred' }} onClick={( ) => {
             if(!j3Voted){
               setp2Votes(p2Votes + 1)
               setJ3Voted(true)
@@ -89,12 +89,12 @@ function Vote(props) {
             }
           }
         }>
-            Team: {props.topic2}
+            <h3>Team: {props.topic2.correct_answer}</h3>
         </button>
     </section>
     </section> 
     {!j1Voted || !j2Voted || !j3Voted &&
-      <h1>Someone Needs to Vote</h1>
+      <h3>Someone Needs to Vote</h3>
     }
     {j1Voted && j2Voted && j3Voted &&
       <section>
