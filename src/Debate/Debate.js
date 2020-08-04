@@ -59,7 +59,7 @@ function Debate(props) {
 
       {gameState === "prep" && 
             <section className="clock">
-              <ReactCountdownClock seconds={3}
+              <ReactCountdownClock seconds={30}
                                     color="#000"
                                     alpha={0.9}
                                     size={300}
@@ -79,7 +79,7 @@ function Debate(props) {
       }
       {gameState === "p1 turn" && 
             <section className="clock">
-              <ReactCountdownClock seconds={6}
+              <ReactCountdownClock seconds={60}
                                     color="#000"
                                     alpha={0.9}
                                     size={300}
@@ -97,7 +97,7 @@ function Debate(props) {
       }
       {gameState === "p2 turn" && 
             <section className="clock">
-              <ReactCountdownClock seconds={6}
+              <ReactCountdownClock seconds={60}
                                     color="#000"
                                     alpha={0.9}
                                     size={300}

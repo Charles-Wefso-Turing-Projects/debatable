@@ -1,6 +1,6 @@
 # Debatable
 
-  An icebreaker tool that encourages arguing.
+  An icebreaker tool for bizarre arguments.
 
 ### Contributors:
   - Charles Wefso (GitHub: [CWefso](https://github.com/cwefso))
@@ -14,13 +14,9 @@
   - Using Express to build a micro-service
   - Managing API fetch calls and writing endpoints in the microservice.
 
-## Visit App
-
-  - The Debatable App is deployed here: 
-
 ## Server Install Instructions
 
-  - Clone down the micro-service located here: [rancid-api] (https://github.com/Melizzo/rancid-api)
+  - Clone down the micro-service located here: [debatable](https://github.com/cwefso/debatable)
   - Run ``` npm install```
   - Run ``` node server.js ```
 
@@ -34,29 +30,47 @@
 
 ## Project Overview
 
-  Login Info:
-    email : lucy@turing.io
-    password : password1
+  This application is designed to provide a short ice-breaker activity for groups of 5. 
 
-  In this project we worked together to build an application using React and Router. Working together we built the majority of the app's components and functionality. We then took on individual components and integrated them into the overall application. 
+![Main Page](https://i.imgur.com/lgTKUTS.png)
 
-![Main Page](https://i.gyazo.com/c365310b953c259a213620251b4c99f8.gif)
+  Instructions are provided
 
-  By logging into the application, the user is greeted with their name and can see the movies they have rated.
+![Instructions](https://imgur.com/sdePbxw.png)
 
-![Add a rating](https://i.gyazo.com/0a189bbc07f16e999647d45d61580017.gif)
+  Two players are selected as debators. The rest are judges.
 
-  A user can add a rating if they have not yet rated a movie, and can delete that rating as well.
+![Topics Assigned](https://imgur.com/S9ekYc9.png)
 
-![Add a comment](https://i.gyazo.com/eaa25c89871de842b527acdf866a9d3e.gif)
+  Two random topics will be assigned to each debator.
 
-  A user can add a comment, but they better be sure! Because they can not delete it... yet.
+![Research](https://imgur.com/06L5bHw.png)
 
+  The debators get 30 seconds to research.
+
+![Debator 1](https://imgur.com/quxPzGj.png)
+
+Player One gets 60 seconds to make their case.
+
+![Debator 2](https://imgur.com/Ty9npPx.png)
+
+Player Two gets 60 seconds to make their case.
+
+![Vote](https://imgur.com/y7XsGBh.png)
+
+After both sides have had a chance to debate, the judges get to select a winner.
+
+## Future Plans
+
+  - Build out own dataset with better curated terms and images.
+  - Save winning teams to an array of champions.
+  - Optional amount of judges.
+  - MediaQueries for a better mobile experience.
 
 ## Technologies Used
   - React / Router
+  - React Hooks
   - React Testing Library / Jest
-  - Express
   - JavaScript
   - HTML/CSS/SCSS
 
