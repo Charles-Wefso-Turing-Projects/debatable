@@ -16,14 +16,14 @@ function Debate(props) {
   props.setTopic1(topic1)
   props.setTopic2(topic2)
 
-  useEffect(() => {
-    if(topic1 !== typeof Number) {
-      props.setTopic1(topic3)
-    }
-    if(topic2 !== typeof Number) {
-      props.setTopic2(topic3)
-    }
-  }, [])
+  // useEffect(() => {
+  //   if(topic1 !== typeof Number) {
+  //     props.setTopic1(topic3)
+  //   }
+  //   if(topic2 !== typeof Number) {
+  //     props.setTopic2(topic3)
+  //   }
+  // }, [])
   
   const pushToVote = () => {
     props.history.push('/vote')

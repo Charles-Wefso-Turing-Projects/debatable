@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './Vote.scss';
 import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 
 function Vote(props) {
@@ -93,7 +94,13 @@ function Vote(props) {
         </button>
     </section>
     </section> 
-    {!j1Voted || !j2Voted || !j3Voted &&
+    {!j1Voted &&
+      <h3>Someone Needs to Vote</h3>
+    }
+    {!j2Voted &&
+      <h3>Someone Needs to Vote</h3>
+    }
+    {!j3Voted &&
       <h3>Someone Needs to Vote</h3>
     }
     {j1Voted && j2Voted && j3Voted &&
@@ -111,3 +118,14 @@ function Vote(props) {
 
 
 export default Vote
+
+Vote.propTypes = {
+  debators:  PropTypes.array,
+  judges:  PropTypes.array,
+  history: PropTypes.object,
+  info: PropTypes.object,
+  location: PropTypes.object,
+  match: PropTypes.object,
+  setTopic1: PropTypes.func,
+  setTopic2: PropTypes.func
+}

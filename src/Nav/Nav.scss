@@ -1,16 +1,16 @@
 @import "../styles/styles.scss";
 
 nav {
+  align-items: baseline;
+  background-color: white;
+  border-bottom: 5px solid black;
   border-top: 3vh solid white;
-  font-family: $headerFont;
-  font-size: 7vh;
   display: flex;
   flex-direction: row;
+  font-family: $headerFont;
+  font-size: 7vh;
   justify-content: center;
-  align-items: baseline;
-  border-bottom: 5px solid black;
   width: 90vw;
-  background-color: white;
 }
 
 svg {
