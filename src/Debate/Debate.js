@@ -3,27 +3,17 @@ import ReactCountdownClock from 'react-countdown-clock'
 import './Debate.scss';
 import useTopic from '../Hooks/useTopic'
 import categories from '../categories'
+import PropTypes from 'prop-types'
 
 function Debate(props) {
   const [gameState, setGameState] = useState("begin")
   const shuffle = require('shuffle-array')
   const category1 = shuffle.pick(categories)
   const category2 = shuffle.pick(categories)
-  const category3 = shuffle.pick(categories)
   const topic1 = useTopic(category1)
   const topic2 = useTopic(category2)
-  const topic3 = shuffle.pick(categories)
   props.setTopic1(topic1)
   props.setTopic2(topic2)
-
-  // useEffect(() => {
-  //   if(topic1 !== typeof Number) {
-  //     props.setTopic1(topic3)
-  //   }
-  //   if(topic2 !== typeof Number) {
-  //     props.setTopic2(topic3)
-  //   }
-  // }, [])
   
   const pushToVote = () => {
     props.history.push('/vote')
@@ -143,3 +133,14 @@ function Debate(props) {
 
 
 export default Debate
+
+Debate.propTypes = {
+  judges: PropTypes.array,
+  debators: PropTypes.array,
+  history: PropTypes.object,
+  info: PropTypes.object,
+  location: PropTypes.object,
+  match: PropTypes.object,
+  setTopic1: PropTypes.func,
+  setTopic2: PropTypes.func
+}

@@ -22,7 +22,7 @@ const useTopic = (category) => {
     };
 
     triviaFetch();
-  });
+  }, []);
 
   return topic;
 };
