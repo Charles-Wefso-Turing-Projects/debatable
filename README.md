@@ -14,12 +14,6 @@
   - Using Express to build a micro-service
   - Managing API fetch calls and writing endpoints in the microservice.
 
-## Server Install Instructions
-
-  - Clone down the micro-service located here: [debatable](https://github.com/cwefso/debatable)
-  - Run ``` npm install```
-  - Run ``` node server.js ```
-
 ## Application Install Instruction
   In a different directory than the server:
   - Clone down this repo
