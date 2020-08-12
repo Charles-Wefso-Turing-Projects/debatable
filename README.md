@@ -1,5 +1,4 @@
 # Debatable
-
   An icebreaker tool for bizarre arguments.
 
 ### Contributors:
