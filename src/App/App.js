@@ -40,14 +40,14 @@ function App() {
             <ol>
               Debate Phases
               <li>
-                At the beginning of the debate players have 30 seconds to
+                At the beginning of the debate players have 10 seconds to
                 research their subjects.
               </li>
               <li>
-                Player One has 60 seconds to explain why their topic is
+                Player One has 30 seconds to explain why their topic is
                 superior.
               </li>
-              <li>Player Two will recieve 60 seconds as well.</li>
+              <li>Player Two will recieve 30 seconds as well.</li>
             </ol>
             <p>Voting: The Judges make their decision.</p>
             <p>
