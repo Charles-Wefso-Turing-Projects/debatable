@@ -111,7 +111,7 @@ function App() {
           return (
             <section className="vote-page">
               <Nav />
-              <section>
+              <section className="main">
                 <Vote
                   {...routeProps}
                   setVotes={setVotes}
@@ -148,8 +148,11 @@ function App() {
           return (
             <section className="name-page">
               <Nav />
+              <section className="main">
+
               <section className="names">
                 <Names {...routeProps} setPlayers={setPlayers} />
+              </section>
               </section>
             </section>
           );

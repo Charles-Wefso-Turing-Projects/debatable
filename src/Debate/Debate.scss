@@ -12,6 +12,8 @@
 h2 {
  font-size: 40%;
  position: relative;
+ color: $main;
+//  text-shadow: $glow-white;
 }
 
 .debate {
@@ -20,7 +22,7 @@ h2 {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 90vw;
+  width: 100vw;
   z-index: 1;
 }
 
@@ -28,7 +30,6 @@ h2 {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: center;
   width: 50vw;
 }
@@ -43,6 +44,7 @@ h2 {
   height: 10vh;
   justify-content: space-between;
   width: 90vw;
+  margin-top: 8%;
 }
 
 .debate-stage {
@@ -51,7 +53,7 @@ h2 {
   flex-direction: row;
   font-family: $bodyFont;
   font-size: 5vh;
-  height: 55vh;
+  height: 40vh;
   justify-content: space-evenly;
   width: 90vw;
 }
@@ -81,9 +83,11 @@ h2 {
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-family: $headerFont;
+  font-family: $header;
   font-size: 5vh;
   width: 100vw;
+  color: $main;
+  text-shadow: $glow-white;
 }
 
 .judge {
@@ -95,6 +99,8 @@ h2 {
   height: 5vh;
   justify-content: center;
   width: 10vw;
+  color: black;
+  text-shadow: none;
 }
 
 .judge-names {
@@ -179,8 +185,10 @@ img {
 }
 
 .debate-button {
-  width: 80%;
+  min-width: 180px;
+  min-height: 180px;
   font-size: xx-large;
+  color: $main;
 }
 
 .timer-wrapper {
@@ -202,4 +210,8 @@ img {
 
 .value {
   font-size: 40px;
+}
+
+div {
+  z-index: 1;
 }

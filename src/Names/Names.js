@@ -96,7 +96,7 @@ class Names extends Component {
             <h1>Please Add Five Names</h1>
           ) : (
             <Link to="/debate" onClick={this.handleSubmit}>
-              Submit
+              SUBMIT
             </Link>
           )}
         </form>
