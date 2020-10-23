@@ -38,7 +38,7 @@
   width: 100vw;
 }
 
-.card {
+.card, .instructions-card {
   background-color: white;
   padding: 2em;
   border-radius: 3px;
@@ -49,6 +49,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.instructions-card {
+  height: 60vh;
 }
 
 .logo {
@@ -99,6 +103,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 10%;
 }
 
 .winners-page {

@@ -29,7 +29,7 @@ function App() {
     <main className="App-main">
       <Nav />
       <section className="instructions">
-        <section className="card">
+        <section className="instructions-card">
           <h1>Instructions for Playing</h1>
           <section className="rules">
             <p>

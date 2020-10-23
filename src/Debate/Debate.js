@@ -71,7 +71,7 @@ function Debate(props) {
       <section className="timer-wrapper">
         <CountdownCircleTimer
           isPlaying
-          duration={1}
+          duration={10}
           colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
           // onComplete={() => [true, 1000]}
           onComplete={() => setGameState("p1 inform")}
@@ -96,7 +96,7 @@ function Debate(props) {
       <section className="timer-wrapper">
         <CountdownCircleTimer
           isPlaying
-          duration={3}
+          duration={30}
           colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
           onComplete={() => setGameState("p2 inform")}
         >
@@ -121,7 +121,7 @@ function Debate(props) {
       <section className="timer-wrapper">
         <CountdownCircleTimer
           isPlaying
-          duration={3}
+          duration={30}
           colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
           onComplete={() => pushToVote()}
         >
