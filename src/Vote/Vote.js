@@ -29,7 +29,7 @@ function Vote(props) {
         }
       }
     }>
-        <h3>Team: {props.topic1.correct_answer}</h3>
+        <h3>Team: {props.topic1.name}</h3>
       </button>
       <button style={{ 'backgroundColor': 'darkred' }}onClick={( ) => {
         if(!j1Voted){
@@ -40,7 +40,7 @@ function Vote(props) {
         }
       }
     }>
-        <h3>Team: {props.topic2.correct_answer}</h3>
+        <h3>Team: {props.topic2.name}</h3>
       </button>
     </section>
     <section className="vote">
@@ -54,7 +54,7 @@ function Vote(props) {
           }
         }
       }>
-          <h3>Team: {props.topic1.correct_answer}</h3>
+          <h3>Team: {props.topic1.name}</h3>
         </button>
         <button style={{ 'backgroundColor': 'darkred' }}onClick={( ) => {
           if(!j2Voted){
@@ -65,7 +65,7 @@ function Vote(props) {
           }
         }
       }>
-          <h3>Team: {props.topic2.correct_answer}</h3>
+          <h3>Team: {props.topic2.name}</h3>
       </button>
     </section>
     <section className="vote">
@@ -79,7 +79,7 @@ function Vote(props) {
           }
         }
       }>
-            <h3>Team: {props.topic1.correct_answer}</h3>
+            <h3>Team: {props.topic1.name}</h3>
           </button>
           <button style={{ 'backgroundColor': 'darkred' }} onClick={( ) => {
             if(!j3Voted){
@@ -90,7 +90,7 @@ function Vote(props) {
             }
           }
         }>
-            <h3>Team: {props.topic2.correct_answer}</h3>
+            <h3>Team: {props.topic2.name}</h3>
         </button>
     </section>
     </section> 

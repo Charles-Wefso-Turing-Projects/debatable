@@ -5,7 +5,7 @@ import Names from "../Names/Names";
 import Debate from "../Debate/Debate";
 import Vote from "../Vote/Vote";
 import { GrStar } from "react-icons/gr";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link, NavLink } from "react-router-dom";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -79,10 +79,10 @@ function App() {
                 <Nav />
                 <section className="winners">
                   {votes[0].p1 > votes[0].p2 && (
-                    <section className="wins card">Team {topic1} Wins.</section>
+                    <section className="wins card">Team {topic1.name} Wins.</section>
                   )}
                   {votes[0].p1 < votes[0].p2 && (
-                    <section className="wins card">Team {topic2} Wins.</section>
+                    <section className="wins card">Team {topic2.name} Wins.</section>
                   )}
                   <button onClick={() => routeProps.history.push("/")}>
                     Restart?
@@ -186,16 +186,22 @@ function App() {
         path="/"
         render={(routeProps) => {
           return (
-            <section className="splash">
-              <section className="card">
-                <h1>
-                  {<GrStar />}
-                  {"DEBATABLE"}
-                  {<GrStar />}
-                </h1>
-                <Link to="/instructions">click to start</Link>
+            <div className="App">
+            <header className="App-header">
+              <div role="logo" className="logo">
+                debatable
+              </div>
+              <section className="buttons">
+                <NavLink
+                  to={"/instructions"}
+                  className="start"
+                  style={{ textDecoration: "none" }}
+                >
+                  START
+                </NavLink>
               </section>
-            </section>
+            </header>
+          </div>
           );
         }}
       />

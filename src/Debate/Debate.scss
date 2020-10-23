@@ -58,24 +58,24 @@ h2 {
 
 .topic-one-card, .topic-two-card {
   align-items: center;
-  background-color: cornflowerblue;
-  border-radius: 50%;
+  // background-color: cornflowerblue;
+  // border-radius: 50%;
   display: flex;
   flex-direction: column;
-  height: 300px;
+  // height: 300px;
   justify-content: center;
   margin-top: 10%;
   position: relative;
-  width: 300px;
+  // width: 300px;
 }
 
-.topic-two-card {
-  align-items: center;
-  background-color: darkred;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+// .topic-two-card {
+//   align-items: center;
+//   background-color: darkred;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+// }
 
 .judges-box {
   align-items: center;
@@ -114,9 +114,13 @@ h2 {
   font-family: Roboto;
   justify-content: center;
   width: inherit;
+  text-shadow: $glow-blue;
+  color: $blue;
 }
 
 .player-two-name {
+  text-shadow: $glow-red;
+  color: $red;
   margin-left: 10vw;
 }
 
@@ -124,10 +128,10 @@ h2 {
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-size: large;
+  // font-size: large;
   justify-content: center;
-  max-height: 100vh;
-  min-width: 200px;
+  // max-height: 100vh;
+  // min-width: 200px;
 }
 
 .error {
@@ -148,11 +152,54 @@ h2 {
   width: 90vw;
 }
 
-.react-countdown-clock {
-  background-color: white;
+// .react-countdown-clock {
+//   background-color: white;
+//   border-radius: 50%;
+//   opacity: 85%;
+//   position: relative;
+//   width: 100vw;
+//   z-index: 2;
+// }
+
+// .topic-img {
+//   margin-top: 10vh;
+//   display: flex;
+//   width: 100vw;
+//   height: 100vh;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+img {
+  height: 300px;
+  width: 300px;
   border-radius: 50%;
-  opacity: 85%;
-  position: relative;
-  width: 100vw;
-  z-index: 2;
+  box-shadow: $glow-white;
+}
+
+.debate-button {
+  width: 80%;
+  font-size: xx-large;
+}
+
+.timer-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.timer {
+  font-family: Roboto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text {
+  font-size: 20px;
+  // color: white;
+}
+
+.value {
+  font-size: 40px;
 }

@@ -1,96 +1,75 @@
-@import "../styles/styles.scss";
+@import '/Users/cwefso/projects/debatable-practice/src/styles/_colors.scss';
+@import '/Users/cwefso/projects/debatable-practice/src/styles/_fonts.scss'; // assuming a styles directory under src/
 
-div,
-.error-page {
-  align-items: center;
-  background-color: $background;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+.App {
+  text-align: center;
 }
 
-.instructions,
-.winners,
-.splash {
-  align-items: center;
-  background-color: $offwhite;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  width: 90vw;
-  z-index: 1;
-}
-
-.splash {
-  align-items: center;
-  background-color: $offwhite;
-  border-bottom: 5px solid black;
-  display: flex;
-  flex-direction: column;
-  font-family: $headerFont;
-  font-size: 12vh;
-  justify-content: center;
-}
-
-.card,
-button,
-a {
-  color: black;
-  -moz-box-shadow: 3px 5px 5px 3px #ccc; /* Firefox 3.5 - 3.6 */
-  -webkit-box-shadow: 3px 5px 5px 3px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  align-items: center;
-  background-color: white;
-  border: 1px solid black;
-  box-shadow: 3px 5px 5px 3px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
-  justify-content: center;
-}
-
-button,
-a {
-  font-size: 5vh;
-  font-style: $bodyFont;
-  height: 10vh;
-  width: 20vw;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
 .App-header {
-  align-items: center;
-  background-color: #282c34;
-  color: $primaryColor;
-  display: flex;
-  flex-direction: column;
-  font-family: $headerFont;
-  font-size: calc(10px + 2vmin);
-  justify-content: center;
+  background-color: #000000;
+  background-image: linear-gradient(397deg, #000000 0%, #2f2f2f 107%);
   min-height: 100vh;
-}
-
-nav {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100vw;
-}
-
-.rules {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  width: fit-content;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-.App-main {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+button {
+  opacity: 100%;
 }
+
+.logo, .buttons {
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
+width: 100vw;
+}
+
+.logo {
+  margin-top: 10vh;
+  height: 60vh;
+  font-family: $header;
+  font-size: 4.75em;
+  text-shadow: $glow-white;
+}
+
+.buttons {
+  width: 100vw;
+  height: 30vh;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.start {
+  font-family: $body;
+  font-size: 2em;
+  text-shadow: $glow-green;
+  color: $green;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .logo, .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    }
+ 
+ }
+
+
