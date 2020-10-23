@@ -14,7 +14,7 @@ function Vote(props) {
 
 
   return(
-  <main>
+  <main className="voting">
 
   <section className="votes">
     {!props.judges[0] && props.history.push('/error')}
@@ -93,13 +93,13 @@ function Vote(props) {
             <h3>Team: {props.topic2.name}</h3>
         </button>
     </section>
-    </section> 
+    </section>
     {!j1Voted || !j2Voted || !j3Voted &&
-      <h3>Someone Needs to Vote</h3>
+      <h2 className="vote-button">Someone Needs to Vote</h2>
     }
     {j1Voted && j2Voted && j3Voted &&
       <section>
-        <Link to="/winner" onClick={() => {
+        <Link to="/winner" className="vote-button" onClick={() => {
           props.setVotes([{"p1": p1Votes, "p2": p2Votes}])
         }}>
             Submit Votes

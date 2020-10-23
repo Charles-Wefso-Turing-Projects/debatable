@@ -3,13 +3,12 @@
 nav {
   align-items: baseline;
   border-bottom: 5px solid black;
-  border-top: 3vh solid black;
   display: flex;
   flex-direction: row;
   font-family: $header;
   font-size: 10vh;
   justify-content: center;
-  width: 90vw;
+  width: 100vw;
 }
 
 .nav-logo {
@@ -21,4 +20,5 @@ nav {
     font-family: $header;
     color: $main;
     text-shadow: $glow-white;
+    background-color: black;
   }

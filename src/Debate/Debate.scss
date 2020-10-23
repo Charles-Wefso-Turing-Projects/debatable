@@ -23,7 +23,7 @@ h2 {
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  z-index: 1;
+  // z-index: 1;
 }
 
 .debator {
@@ -185,10 +185,16 @@ img {
 }
 
 .debate-button {
+  display: flex;
+  max-width: 180px;
   min-width: 180px;
   min-height: 180px;
   font-size: xx-large;
-  color: $main;
+  color: white;
+  border: 1px solid white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .timer-wrapper {

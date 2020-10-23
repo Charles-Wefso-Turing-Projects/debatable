@@ -71,7 +71,7 @@ function Debate(props) {
       <section className="timer-wrapper">
         <CountdownCircleTimer
           isPlaying
-          duration={10}
+          duration={1}
           colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
           // onComplete={() => [true, 1000]}
           onComplete={() => setGameState("p1 inform")}
@@ -87,7 +87,7 @@ function Debate(props) {
               className="debate-button"
               onClick={() => setGameState("p1 turn")}
             >
-              <h2>Start {props.debators[0].name}'s Turn</h2>
+              Start {props.debators[0].name}'s Turn
             </button>
           </section>
         )}
@@ -96,7 +96,7 @@ function Debate(props) {
       <section className="timer-wrapper">
         <CountdownCircleTimer
           isPlaying
-          duration={30}
+          duration={3}
           colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
           onComplete={() => setGameState("p2 inform")}
         >
@@ -112,7 +112,7 @@ function Debate(props) {
               className="debate-button"
               onClick={() => setGameState("p2 turn")}
             >
-              <h2>Start {props.debators[1].name}'s Turn</h2>
+              Start {props.debators[1].name}'s Turn
             </button>
           </section>
         )}
@@ -121,7 +121,7 @@ function Debate(props) {
       <section className="timer-wrapper">
         <CountdownCircleTimer
           isPlaying
-          duration={30}
+          duration={3}
           colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
           onComplete={() => pushToVote()}
         >

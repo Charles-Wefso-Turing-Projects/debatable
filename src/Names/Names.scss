@@ -12,10 +12,14 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 100vh;
   overflow: hidden;
-  width: 90vw;
+  width: 100vw;
+}
+
+.voting {
+  min-height: 641.41px;
 }
 
 .name-page {
@@ -44,14 +48,14 @@ input {
   width: 20vw;
 }
 
-// a {
-//   height: 4vh;
-//   font-size: 3vh;
-//   font-style: $bodyFont;
-//   width: 10vw;
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-//   justify-content: center;
-//   margin-top: 13%;
-// }
+a {
+  border-radius: 3px;
+  font-size: large;
+  height: 5vh;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

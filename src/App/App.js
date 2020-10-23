@@ -75,20 +75,26 @@ function App() {
         render={(routeProps) => {
           if (votes[0]) {
             return (
-              <>
+              <section className="winners-page">
                 <Nav />
                 <section className="winners">
                   {votes[0].p1 > votes[0].p2 && (
-                    <section className="wins card">Team {topic1.name} Wins.</section>
+                    <section className="wins-card">
+                       <img src={topic1.image} alt="topic" />
+                       <h2>Team {topic1.name} Wins.</h2>
+                    </section>
                   )}
                   {votes[0].p1 < votes[0].p2 && (
-                    <section className="wins card">Team {topic2.name} Wins.</section>
+                    <section className="wins-card">
+                       <img src={topic2.image} alt="topic" />
+                       <h2>Team {topic2.name} Wins.</h2>
+                    </section>
                   )}
-                  <button onClick={() => routeProps.history.push("/")}>
+                  <button className="restart-button" onClick={() => routeProps.history.push("/")}>
                     Restart?
                   </button>
                 </section>
-              </>
+              </section>
             );
           }
           routeProps.history.push("/error");
