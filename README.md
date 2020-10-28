@@ -25,33 +25,28 @@
 
   This application is designed to provide a short ice-breaker activity for groups of 5. 
 
-![Main Page](https://i.imgur.com/lgTKUTS.png)
+![Main Page](https://user-images.githubusercontent.com/61127453/97461500-6f6ddf80-1903-11eb-9606-475e2be91c73.png)
 
   Instructions are provided
 
-![Instructions](https://imgur.com/sdePbxw.png)
+![Instructions](https://user-images.githubusercontent.com/61127453/97461511-7268d000-1903-11eb-934c-adc37fc8e2bb.png)
 
   Two players are selected as debators. The rest are judges.
-
-![Topics Assigned](https://imgur.com/S9ekYc9.png)
-
   Two random topics will be assigned to each debator.
 
-![Research](https://imgur.com/06L5bHw.png)
+![Game](https://user-images.githubusercontent.com/61127453/97461523-7563c080-1903-11eb-9877-12655d2514a6.png)
 
-  The debators get 30 seconds to research.
+  1. The debators get 30 seconds to research.
 
-![Debator 1](https://imgur.com/quxPzGj.png)
+  2. Player One gets 60 seconds to make their case.
 
-Player One gets 60 seconds to make their case.
+  3. Player Two gets 60 seconds to make their case.
 
-![Debator 2](https://imgur.com/Ty9npPx.png)
-
-Player Two gets 60 seconds to make their case.
-
-![Vote](https://imgur.com/y7XsGBh.png)
+![Vote](https://user-images.githubusercontent.com/61127453/97461547-7a287480-1903-11eb-81af-901159c01333.png)
 
 After both sides have had a chance to debate, the judges get to select a winner.
+
+![Winner](https://user-images.githubusercontent.com/61127453/97461574-801e5580-1903-11eb-8019-a8aadbd5bd3e.png)
 
 ## Future Plans
 
